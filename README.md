@@ -51,7 +51,7 @@ concrete data format that the operations work on.
 Because every operation follows the same pattern — pass the secret
 token to a given opaque object to obtain the internal representation,
 examine or modify the internal representation, then possibly create
-a new opaque object, it is useful to write a pair of helper functions to
+a new opaque object — it is useful to write a pair of helper functions to
 "open" and "seal" these objects using the module's secret token, and
 then write all operations using these helpers.
 
