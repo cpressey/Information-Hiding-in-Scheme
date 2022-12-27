@@ -81,7 +81,28 @@ Since function values in Scheme are an opaque data type, the secret
 tokens aren't actually necessary, but things do get a little more
 complicated.
 
+Actually, if you're willing for instances of your abstract data type
+to be mutable, it's only a little more complicated.  Your module
+function can simply generate a mutable value internally, and all of
+the operation functions can close over it.  This way, they all have
+it in scope, and can read it and modify it as appropriate, but their
+callers can never see it.  No secret token is needed to prevent this.
+
+In this setup, the module function can return, not a list of
+operations, but a single function; and this single function can take,
+as its first argument, a symbol which indicates what operation to
+perform.  This resembles object-oriented method dispatch, and can
+be used to implement object-oriented features such as inheritance.
+
+(TODO sketch this in code and link to it here)
+
+It's if you want instances of your abstract data type to be
+[immutable data (Wikipedia)][] where it begins to get tricky.
+
 (TBW)
 
+(TODO sketch this also in code and link to it here)
+
 [abstract data type (Wikipedia)]: https://en.wikipedia.org/wiki/Abstract_data_type
+[immutable (Wikipedia)]: https://en.wikipedia.org/wiki/Immutable_object
 [R5RS Scheme]: https://schemers.org/Documents/Standards/R5RS/
