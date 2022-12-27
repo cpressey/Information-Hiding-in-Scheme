@@ -97,12 +97,22 @@ be used to implement object-oriented features such as inheritance.
 (TODO sketch this in code and link to it here)
 
 It's if you want instances of your abstract data type to be
-[immutable data (Wikipedia)][] where it begins to get tricky.
+[immutable data (Wikipedia)][] where it begins to get trickier to
+think about, and this is because every operation of the ADT that
+modifies the data has to return a new, immutable instance of the
+ADT, and by association, all of its operations.
 
-(TBW)
+We can accomplish this by doing two things: sticking with the
+"method dispatch" approach of having all operations implemented
+by a single function that takes a symbol to choose the operation,
+and defining this single function with `letrec` so that it can,
+essentially, return a new version of itself when it has to.
 
-(TODO sketch this also in code and link to it here)
+(more TBW)
+
+See the file [`immutable-adt.scm`](immutable-adt.scm) for
+an example of using this technique to implement a stack ADT.
 
 [abstract data type (Wikipedia)]: https://en.wikipedia.org/wiki/Abstract_data_type
-[immutable (Wikipedia)]: https://en.wikipedia.org/wiki/Immutable_object
+[immutable data (Wikipedia)]: https://en.wikipedia.org/wiki/Immutable_object
 [R5RS Scheme]: https://schemers.org/Documents/Standards/R5RS/
