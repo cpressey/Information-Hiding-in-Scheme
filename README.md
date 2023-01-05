@@ -94,7 +94,8 @@ as its first argument, a symbol which indicates what operation to
 perform.  This resembles object-oriented method dispatch, and can
 be used to implement object-oriented features such as inheritance.
 
-(TODO sketch this in code and link to it here)
+See the file [`mutable-adt.scm`](mutable-adt.scm) for
+an example of using this technique to implement a mutable stack ADT.
 
 It's if you want instances of your abstract data type to be
 [immutable data (Wikipedia)][] where it begins to get trickier to
