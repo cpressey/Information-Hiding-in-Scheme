@@ -109,8 +109,6 @@ by a single function that takes a symbol to choose the operation,
 and defining this single function with `letrec` so that it can,
 essentially, return a new version of itself when it has to.
 
-(more TBW)
-
 See the file [`immutable-adt.scm`](immutable-adt.scm) for
 an example of using this technique to implement a stack ADT.
 
